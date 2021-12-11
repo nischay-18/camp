@@ -23,12 +23,12 @@ const reviews = require('./routes/reviews')
 const campgrounds = require('./routes/campgrounds')
 const user = require('./routes/user')
 
-mongoose.connect(dbUrl, {useNewUrlParser: true,useCreateIndex: true,useUnifiedTopology: true,useFindAndModify: false})
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(()=>{
         console.log('db connected')
     })
-    .catch(()=>{
-        console.log('error connecting')
+    .catch((error)=>{
+        console.log(error)
     })
 
 app.set('view engine', 'ejs');
